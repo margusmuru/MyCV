@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PersonalInfo>
+  <Info>
+    <Name>Name</Name>
+    <Data>Margus Muru</Data>
+  </Info>
+  <info>
+    <Name>Date of birth</Name>
+    <Data>October 30, 1989</Data>
+  </info>
+  <info>
+    <Name>Age</Name>
+    <Data>27</Data>
+  </info>
+  <info>
+    <Name>Phone</Name>
+    <Data>+372 56 863 210</Data>
+  </info>
+  <info>
+    <Name>E-mail</Name>
+    <Data>margusmuru@outlook.com</Data>
+  </info>
+  <info>
+    <Name>Address</Name>
+    <Data>Arbu 8-99 Tallinn, Estonia</Data>
+  </info>
+</PersonalInfo>
