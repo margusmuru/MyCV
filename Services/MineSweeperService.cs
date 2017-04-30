@@ -8,6 +8,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using Models;
+using Services.Enums;
 
 namespace Services
 {
@@ -17,6 +18,8 @@ namespace Services
 
         public List<MinePlate> MinePlates => _minePlates;
 
+        public bool GameHasEnded = false;
+        public GameEndResult GameEndResult;
 
         public MineSweeperService()
         {
@@ -45,6 +48,10 @@ namespace Services
                 plate.IsMined = true;
 #if DEBUG
                 Button btn = plate.BtnButton as Button;
+                if (btn == null)
+                {
+                    throw new NullReferenceException();
+                }
                 btn.Content = "X";
 #endif
             }
@@ -54,10 +61,8 @@ namespace Services
         {
             foreach (MinePlate plate in _minePlates)
             {
-                //setup values for plates in each direction
                 if (plate.IsMined)
-                {
-                    
+                { 
                     foreach (MinePlate minePlate in GetNeighboursList(plate: plate))
                     {
                         if (!minePlate.IsMined) IncreasePlateValue(plate: minePlate);
@@ -77,28 +82,29 @@ namespace Services
 
         }
 
-        public void RevealButton(Button btn)
+        public bool RevealButton(Button btn)
         {
             //find plate
             MinePlate plate = _minePlates.
                 FirstOrDefault(predicate: x => Equals(objA: x.BtnButton as Button, objB: btn));
+            if (plate == null)
+            {
+                throw new NullReferenceException();
+            }
             if (plate != null && !plate.IsRevealed)
             {
-                plate.IsRevealed = true;
-                btn.IsEnabled = false;
-                btn.Background = Brushes.DimGray;
-
                 if (plate.IsMined)
                 {
-                    btn.Content = "Boom";
+                    SetButtonVisuals(stat: MineStatEnum.IsBombed, btn: btn, plate: plate);
+                    RevealAll();
                 }
                 else if (plate.IntDisplay > 0)
                 {
-                    btn.Content = plate.IntDisplay;
+                    SetButtonVisuals(stat: MineStatEnum.IsNumbered, btn: btn, plate: plate);
                 }
                 else
                 {
-                    btn.Content = "";
+                    SetButtonVisuals(stat: MineStatEnum.IsPlane, btn: btn, plate: plate);
                     List<MinePlate> neighbours = GetNeighboursList(plate: plate);
                     foreach (MinePlate neighbour in neighbours)
                     {
@@ -107,18 +113,109 @@ namespace Services
                     }
                 }
             }
-            
+            return CheckGameEndingConditions();
+        }
+
+
+        private void SetButtonVisuals(MineStatEnum stat, Button btn, MinePlate plate)
+        {
+            btn.IsEnabled = false;
+            btn.Background = Brushes.DimGray;
+            plate.IsRevealed = true;
+            switch (stat)
+            {
+                case MineStatEnum.IsBombed:
+                    btn.Content = "Boom";
+                    btn.Background = Brushes.Crimson;
+                    break;
+                case MineStatEnum.IsNumbered:
+                    btn.Content = plate.IntDisplay;
+                    break;
+                default:
+                    btn.Content = "";
+                    break;
+
+            }
         }
 
         private List<MinePlate> GetNeighboursList(MinePlate plate)
         {
-            return _minePlates
-                        .Where(predicate: x =>
+            return _minePlates.Where(predicate: x =>
                         (x.RowPos <= plate.RowPos + 1 && x.RowPos >= plate.RowPos - 1) &&
                         (x.ColumnPos <= plate.ColumnPos + 1 && x.ColumnPos >= plate.ColumnPos - 1) &&
-                        x != plate)
+                         x != plate)
                         .ToList();
         }
 
+        private void RevealAll()
+        {
+            foreach (MinePlate plate in _minePlates)
+            {
+                Button btn = plate.BtnButton as Button;
+                if (!plate.IsRevealed)
+                {
+                    if (plate.IsMined)
+                    {
+                        SetButtonVisuals(stat: MineStatEnum.IsBombed, btn: btn, plate: plate);
+                    }
+                    else if (plate.IntDisplay > 0)
+                    {
+                        SetButtonVisuals(stat: MineStatEnum.IsNumbered, btn: btn, plate: plate);
+                    }
+                    else
+                    {
+                        SetButtonVisuals(stat: MineStatEnum.IsPlane, btn: btn, plate: plate);
+                    }
+                }
+            }
+            GameHasEnded = true;
+        }
+
+        public bool MarkButton(Button btn)
+        {
+            //find plate
+            MinePlate plate = _minePlates.
+                FirstOrDefault(predicate: x => Equals(objA: x.BtnButton as Button, objB: btn));
+            if (plate == null)
+            {
+                throw new NullReferenceException();
+            }
+            if (plate.IsFlagged)
+            {
+                btn.Background = Brushes.DodgerBlue;
+                plate.IsFlagged = false;
+            }
+            else
+            {
+                btn.Background = Brushes.BlueViolet;
+                plate.IsFlagged = true;
+            }
+            return CheckGameEndingConditions();
+        }
+
+        private bool CheckGameEndingConditions()
+        {
+            if (GameHasEnded)
+            {
+                GameEndResult = GameEndResult.Loss;
+                return true;
+            }
+            //check if all correct bombs are marked
+            bool allMarked = true;
+            foreach (MinePlate plate in _minePlates)
+            {
+                if (plate.IsMined && !plate.IsFlagged)
+                {
+                    allMarked = false;
+                    break;
+                }
+            }
+            if (allMarked)
+            {
+                RevealAll();
+                GameEndResult = GameEndResult.Win;
+            }
+            return allMarked;
+        }
     }
 }

@@ -44,6 +44,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\GameEndResult.cs" />
+    <Compile Include="Enums\MineStat.cs" />
     <Compile Include="MineSweeperService.cs" />
     <Compile Include="PersonalInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

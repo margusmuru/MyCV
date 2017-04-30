@@ -41,52 +41,18 @@
     
     <Grid>
         <StackPanel HorizontalAlignment="Left">
-            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2"/>
-            </StackPanel>
-            <Grid x:Name="ButtonsLayoutGrid" Margin="5">
-                <!--
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                    <RowDefinition Height="{Binding BtnHeight}"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                    <ColumnDefinition Width="{Binding BtnWidth}"/>
-                </Grid.ColumnDefinitions>
-                -->
-                <!--
-                <Button x:Name="Btn00" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="0"/>
-                <Button x:Name="Btn01" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="1"/>
-                <Button x:Name="Btn02" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="2"/>
-                <Button x:Name="Btn03" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="3"/>
-                <Button x:Name="Btn04" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="4"/>
-                <Button x:Name="Btn05" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="5"/>
-                <Button x:Name="Btn06" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="6"/>
-                <Button x:Name="Btn07" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="0" Grid.Column="7"/>
+            <StackPanel Orientation="Vertical">
+                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                    <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2"/>
+                </StackPanel>
+                <Grid x:Name="ButtonsLayoutGrid" Margin="5">
 
-                <Button x:Name="Btn10" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="0"/>
-                <Button x:Name="Btn11" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="1"/>
-                <Button x:Name="Btn12" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="2"/>
-                <Button x:Name="Btn13" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="3"/>
-                <Button x:Name="Btn14" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="4"/>
-                <Button x:Name="Btn15" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="5"/>
-                <Button x:Name="Btn16" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="6"/>
-                <Button x:Name="Btn17" Content="" MouseRightButtonDown="BtnClick_Right" Click="BtnClick_Left" Width="{Binding BtnWidth}" Height="{Binding RowHeight}" Grid.Row="1" Grid.Column="7"/>
-                -->
-            </Grid>
+                </Grid>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <Button x:Name="RestartButton" Visibility="Hidden" Content="Play Again" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
+                <Button x:Name="ContinueButton" Visibility="Hidden" Content="Continue" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
+            </StackPanel>
         </StackPanel>
         
     </Grid>

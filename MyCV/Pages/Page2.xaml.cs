@@ -46,7 +46,7 @@ namespace MyCV.Pages
 #if DEBUG
             Trace.WriteLine(message: "Btn LeftClick");
 #endif
-            _page2Vm.MineService.RevealButton(btn: sender as Button);
+            _page2Vm.GameClickLeft(sender: sender);
         }
 
         public void BtnClick_Right(object sender, RoutedEventArgs e)
@@ -54,7 +54,15 @@ namespace MyCV.Pages
 #if DEBUG
             Trace.WriteLine(message: "Btn RightClick");
 #endif
+            _page2Vm.GameClickRight(sender: sender);
         }
 
+        public void BtnClick_Restart(object sender, RoutedEventArgs e)
+        {
+#if DEBUG
+            Trace.WriteLine(message: "Btn Restart MineSweeper");
+#endif
+            _main.Content = new Page2(window: _main);
+        }
     }
 }

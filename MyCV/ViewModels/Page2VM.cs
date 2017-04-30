@@ -6,25 +6,25 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using MyCV.Pages;
 using Services;
+using Services.Enums;
 
 namespace MyCV.ViewModels
 {
     public class Page2VM
     {
-        private readonly int btnHeight = 50;
-        private readonly int btnWidth = 50;
-        private readonly int sizeX = 8;
-        private readonly int sizeY = 8;
-
-        private Page2 _page;
+        private readonly int _btnHeight = 55;
+        private readonly int _btnWidth = 55;
+        private readonly int _sizeX = 8;
+        private readonly int _sizeY = 8;
+        private readonly Page2 _page;
+        
 
         public MineSweeperService MineService;
         public Page2VM(Page2 page)
         {
-            btnHeight = 50;
-            btnWidth = 50;
             _page = page;
             MineService = new MineSweeperService();
             GeneratePlayingField();
@@ -33,15 +33,15 @@ namespace MyCV.ViewModels
         private void GeneratePlayingField()
         {      
 
-            for (int i = 0; i < sizeX; i++)
+            for (int i = 0; i < _sizeX; i++)
             {
                 RowDefinition r = new RowDefinition();
-                r.Height = new GridLength(pixels: btnHeight);
+                r.Height = new GridLength(pixels: _btnHeight);
                 _page.ButtonsLayoutGrid.RowDefinitions.Add(value: r);
-                for (int j = 0; j < sizeY; j++)
+                for (int j = 0; j < _sizeY; j++)
                 {
                     ColumnDefinition c = new ColumnDefinition();
-                    c.Width = new GridLength(pixels: btnWidth);
+                    c.Width = new GridLength(pixels: _btnWidth);
                     _page.ButtonsLayoutGrid.ColumnDefinitions.Add(value: c);
 
                     Button b = new Button
@@ -51,6 +51,7 @@ namespace MyCV.ViewModels
                         Margin = new Thickness(uniformLength: 2),
                         
                     };
+                    b.Background = Brushes.DodgerBlue;
                     b.Click += new RoutedEventHandler(_page.BtnClick_Left);
                     b.MouseRightButtonDown += new MouseButtonEventHandler(_page.BtnClick_Right);
 
@@ -64,6 +65,38 @@ namespace MyCV.ViewModels
             MineService.SetupGameField();
         }
 
+        public void GameClickLeft(object sender)
+        {
+            bool gameHasEnded = MineService.RevealButton(btn: sender as Button);
+            if (gameHasEnded)
+            {
+                GameHasEnded();
+            }
+        }
 
+        public void GameClickRight(object sender)
+        {
+            bool gameHasEnded = MineService.MarkButton(btn: sender as Button);
+            if (gameHasEnded)
+            {
+                GameHasEnded();
+            }
+        }
+
+        private void GameHasEnded()
+        {
+            switch (MineService.GameEndResult)
+            {
+                case GameEndResult.Win:
+                    _page.ContinueButton.Visibility = Visibility.Visible;
+                    break;
+                case GameEndResult.Loss:
+                    _page.RestartButton.Visibility = Visibility.Visible;
+                    break;
+                default:
+                    break;
+
+            }
+        }
     }
 }
