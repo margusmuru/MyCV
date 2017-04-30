@@ -5,7 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyCV"
         mc:Ignorable="d"
-        Title="My Curriculum Vitae" Height="600" Width="800" Background="#3E7185" Icon="Images/Page1/avatar.png">
+        Title="My Curriculum Vitae" 
+        Height="600" 
+        Width="800" 
+        Background="#3E7185" 
+        Icon="Images/Page1/avatar.png"
+        ResizeMode="NoResize"
+        >
     <Window.Resources>
         <Style TargetType="{x:Type Button}">
             <Setter Property="Background" Value="#04BAFF" />

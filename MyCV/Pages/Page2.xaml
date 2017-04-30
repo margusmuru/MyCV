@@ -38,23 +38,40 @@
             </Setter>
         </Style>
     </Page.Resources>
-    
-    <Grid>
-        <StackPanel HorizontalAlignment="Left">
-            <StackPanel Orientation="Vertical">
-                <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
-                    <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2"/>
-                </StackPanel>
-                <Grid x:Name="ButtonsLayoutGrid" Margin="5">
 
-                </Grid>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Orientation="Vertical" Grid.Column="0">
+            <!--Leftside panel-->
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2"/>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <Button x:Name="RestartButton" Visibility="Hidden" Content="Play Again" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
-                <Button x:Name="ContinueButton" Visibility="Hidden" Content="Continue" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
-            </StackPanel>
+            <TextBlock Text="Minesweeper" FontSize="25" FontFamily="Showcard Gothic"></TextBlock>
+            <Grid x:Name="ButtonsLayoutGrid" Margin="5">
+                <!--Here comes the generated playing field -->
+            </Grid>
         </StackPanel>
-        
+        <Grid Grid.Column="1">
+            <!--Rightside panel -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="60"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0" Margin="10" HorizontalAlignment="Left">
+                <!--top items -->
+                <Label FontFamily="Showcard Gothic" Margin="10,100,0,0">Mines left:</Label>
+                <TextBlock x:Name="MineCounter"  Text="TextBlock" FontSize="20" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
+            </StackPanel>
+            <StackPanel Grid.Row="1" Margin="5">
+                <!-- bottom items -->
+                <Button x:Name="RestartButton" Visibility="Collapsed" Content="Play Again" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
+                <Button x:Name="ContinueButton" Visibility="Collapsed" Content="Continue" Width="80" Height="40" Click="BtnClick_Restart" Margin="2,2,2,2"/>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Page>
 

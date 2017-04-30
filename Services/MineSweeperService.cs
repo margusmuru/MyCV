@@ -18,12 +18,22 @@ namespace Services
 
         public List<MinePlate> MinePlates => _minePlates;
 
-        public bool GameHasEnded = false;
-        public GameEndResult GameEndResult;
+        private bool _gameHasEnded;
+        public bool GameHasEnded
+        {
+            get { return _gameHasEnded; }
+        }
 
+        private GameEndResult _gameEndResult;
+        public GameEndResult GameEndResult {get
+        {
+            return _gameEndResult;
+        }}
+         
         public MineSweeperService()
         {
             _minePlates = new List<MinePlate>();
+            _gameHasEnded = false;
         }
 
         public void AddPlate(Button btnButton, int x, int y)
@@ -168,7 +178,7 @@ namespace Services
                     }
                 }
             }
-            GameHasEnded = true;
+            _gameHasEnded = true;
         }
 
         public bool MarkButton(Button btn)
@@ -197,7 +207,7 @@ namespace Services
         {
             if (GameHasEnded)
             {
-                GameEndResult = GameEndResult.Loss;
+                _gameEndResult = GameEndResult.Loss;
                 return true;
             }
             //check if all correct bombs are marked
@@ -213,7 +223,7 @@ namespace Services
             if (allMarked)
             {
                 RevealAll();
-                GameEndResult = GameEndResult.Win;
+                _gameEndResult = GameEndResult.Win;
             }
             return allMarked;
         }
