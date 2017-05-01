@@ -57,6 +57,9 @@
     <Compile Include="Pages\PageEducation.xaml.cs">
       <DependentUpon>PageEducation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageSkills.xaml.cs">
+      <DependentUpon>PageSkills.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageWorkExperience.xaml.cs">
       <DependentUpon>PageWorkExperience.xaml</DependentUpon>
     </Compile>
@@ -64,6 +67,7 @@
     <Compile Include="ViewModels\PageEducationVm.cs" />
     <Compile Include="ViewModels\PageIntroVm.cs" />
     <Compile Include="ViewModels\PageMineSweeperVm.cs" />
+    <Compile Include="ViewModels\PageSkillsVm.cs" />
     <Compile Include="ViewModels\PageWorkExperienceVm.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -86,6 +90,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageEducation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageSkills.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -151,6 +159,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\PageEducation\student_clipart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PageSkillsInfo\skills_clipart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

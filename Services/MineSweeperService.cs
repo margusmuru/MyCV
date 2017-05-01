@@ -207,7 +207,7 @@ namespace Services
                 plate.IsFlagged = false;
                 _minesLeft++;
             }
-            else
+            else if(MinesLeft > 0)
             {
                 btn.Background = Brushes.BlueViolet;
                 plate.IsFlagged = true;

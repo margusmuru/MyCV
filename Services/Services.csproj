@@ -51,6 +51,7 @@
     <Compile Include="PersonalInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="SkillsInfoService.cs" />
     <Compile Include="WorkExperienceService.cs" />
   </ItemGroup>
   <ItemGroup>
