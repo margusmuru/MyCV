@@ -24,7 +24,7 @@ namespace MyCV
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new PageIntro(window: this);
+            MainFrame.Content = new PageShips(window: this);
         }
         
     }

@@ -113,7 +113,7 @@ namespace Services
             {
                 throw new NullReferenceException();
             }
-            if (plate != null && !plate.IsRevealed)
+            if (plate != null && !plate.IsRevealed && !plate.IsFlagged)
             {
                 if (plate.IsMined)
                 {

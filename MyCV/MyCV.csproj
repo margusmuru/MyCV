@@ -60,6 +60,9 @@
     <Compile Include="Pages\PageEducation.xaml.cs">
       <DependentUpon>PageEducation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageShips.xaml.cs">
+      <DependentUpon>PageShips.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageSkills.xaml.cs">
       <DependentUpon>PageSkills.xaml</DependentUpon>
     </Compile>
@@ -71,6 +74,7 @@
     <Compile Include="ViewModels\PageEducationVm.cs" />
     <Compile Include="ViewModels\PageIntroVm.cs" />
     <Compile Include="ViewModels\PageMineSweeperVm.cs" />
+    <Compile Include="ViewModels\PageShipsVm.cs" />
     <Compile Include="ViewModels\PageSkillsVm.cs" />
     <Compile Include="ViewModels\PageWorkExperienceVm.cs" />
     <Page Include="MainWindow.xaml">
@@ -98,6 +102,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageEducation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageShips.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
