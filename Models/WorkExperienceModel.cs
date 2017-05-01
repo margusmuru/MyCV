@@ -8,12 +8,19 @@ namespace Models
 {
     public class WorkExperienceModel : EducationInfoModel
     {
-        public string Position { get; }
+        private string _position;
+        public string Position
+        {
+            get
+            {
+                return "Position: " + _position;
+            }
+        }
 
         public WorkExperienceModel(string name, string time, string info, string position) 
             :base(name: name, time: time, info: info)
         {
-            Position = position;
+            _position = position;
         }
     }
 }

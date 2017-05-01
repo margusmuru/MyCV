@@ -3,28 +3,30 @@
   <Info>
     <Name>Tallink Duty Free AS</Name>
     <Time>06.2013 - 08.2015 </Time>
-    <Info>-</Info>
-    <Position> Seller </Position>
+    <Info>-
+    </Info>
+    <Position>Seller</Position>
   </Info>
   <Info>
     <Name>Trimtex Baltic OÜ</Name>
     <Time> 03.2013 - 06.2013 </Time>
-    <Info>
-      Prepared files for plotters in graphics application. 
-      Left due to moving from Pärnu to Tallinn
+    <Info>Prepared files for plotters in graphics application. 
+Left due to moving from Pärnu to Tallinn
     </Info>
-    <Position>  Plotter operator  </Position>
+    <Position>Plotter operator</Position>
   </Info>
   <Info>
     <Name>Estonian Defence Forces </Name>
     <Time>07.2012 - 03.2013</Time>
-    <Info>Served in Air Defence Battalion</Info>
+    <Info>Served in Air Defence Battalion
+    </Info>
     <Position>Achieved “Younger Sergeant” rank</Position>
   </Info>
   <Info>
     <Name>Freelance</Name>
     <Time>from 2006</Time>
-    <Info>3D modeling, rendering, texturing</Info>
+    <Info>3D modeling, rendering, texturing
+    </Info>
     <Position>3D artist</Position>
   </Info>
 </WorkExperienceInfo>

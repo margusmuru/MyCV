@@ -57,10 +57,14 @@
     <Compile Include="Pages\PageEducation.xaml.cs">
       <DependentUpon>PageEducation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageWorkExperience.xaml.cs">
+      <DependentUpon>PageWorkExperience.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\PageEducationVm.cs" />
     <Compile Include="ViewModels\PageIntroVm.cs" />
     <Compile Include="ViewModels\PageMineSweeperVm.cs" />
+    <Compile Include="ViewModels\PageWorkExperienceVm.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -82,6 +86,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageEducation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageWorkExperience.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -119,12 +127,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Page1\avatar.png" />
+    <Resource Include="Images\PagePersonalInfo\avatar.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\Page1\AgeraR_007.jpg" />
+    <Resource Include="Images\PagePersonalInfo\AgeraR_007.jpg" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\PageWorkExperience\work_clipart.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataLibrary\DataLibrary.csproj">
       <Project>{6d386a2d-c9ad-4fb7-800b-54e20d807f2f}</Project>
@@ -138,6 +148,9 @@
       <Project>{75ccb7db-9361-4033-8e94-5dc3bb0c3682}</Project>
       <Name>Services</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\PageEducation\student_clipart.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

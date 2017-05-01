@@ -9,7 +9,7 @@
         Height="600" 
         Width="800" 
         Background="#3E7185" 
-        Icon="Images/Page1/avatar.png"
+        Icon="Images/PagePersonalInfo/avatar.png"
         ResizeMode="NoResize"
         >
     <Window.Resources>

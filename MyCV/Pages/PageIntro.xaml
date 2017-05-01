@@ -45,7 +45,7 @@
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Width="250">
                     <Grid>
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/MyCV;component/Images/Page1/avatar.png" Width="200" Margin="10" />
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/avatar.png" Width="200" Margin="10" />
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -74,10 +74,10 @@
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5">
                     <Grid>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/MyCV;component/Images/Page1/AgeraR_007.jpg" Width="140" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="140" Margin="5"/>
                             <StackPanel Orientation="Vertical" Width="300">
                                 <TextBlock Height="100" Width="Auto" Text="Here goes description"></TextBlock>
-                                <Button Content="Education" Width="200" Height="40" Click="BtnMainInfo" Margin="75,5,5,5"/>
+                                <Button Content="Education" Width="200" Height="40" Click="BtnEducation" Margin="75,5,5,5"/>
                             </StackPanel>
                         </StackPanel>
                     </Grid>
@@ -88,9 +88,9 @@
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical" Width="300">
                                 <TextBlock Height="100" Width="Auto" Text="Here goes description"></TextBlock>
-                                <Button Content="Skills" Width="200" Height="40" Click="BtnMainInfo" Margin="5,5,75,5"/>
+                                <Button Content="WorkExperience" Width="200" Height="40" Click="BtnWorkExperience" Margin="5,5,75,5"/>
                             </StackPanel>
-                            <Image Source="/MyCV;component/Images/Page1/AgeraR_007.jpg" Width="140" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="140" Margin="5"/>
                         </StackPanel>
                     </Grid>
                 </Border>

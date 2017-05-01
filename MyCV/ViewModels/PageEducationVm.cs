@@ -13,7 +13,6 @@ namespace MyCV.ViewModels
 {
     public class PageEducationVm
     {
-        private readonly PageEducation _pageEducation;
 
         private ObservableCollection<EducationInfoModel> _educationInfoModels;
 
@@ -27,7 +26,6 @@ namespace MyCV.ViewModels
 
         public PageEducationVm(PageEducation pageEducation)
         {
-            _pageEducation = pageEducation;
 #if DEBUG
             Trace.WriteLine(message: "PageEducationVm loaded");
 #endif

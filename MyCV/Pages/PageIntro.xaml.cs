@@ -38,11 +38,16 @@ namespace MyCV.Pages
 #endif
 
         }
-        private void BtnMainInfo(object sender, RoutedEventArgs e)
+        private void BtnEducation(object sender, RoutedEventArgs e)
         {
             _main.Content = new PageMineSweeper(window: _main);
         }
 
-        
+        private void BtnWorkExperience(object sender, RoutedEventArgs e)
+        {
+            _main.Content = new PageWorkExperience(window: _main);
+        }
+
+
     }
 }

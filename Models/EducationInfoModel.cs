@@ -16,7 +16,9 @@ namespace Models
             //set { _time = value; }
         }
 
-        public string Info { get;
+        private string _info;
+        public string Info {
+            get { return "Info: " + _info; }
             //set { _info = value; }
         }
 
@@ -24,7 +26,7 @@ namespace Models
         {
             Name = name;
             Time = time;
-            Info = info;
+            _info = info;
         }
 
         public EducationInfoModel()
