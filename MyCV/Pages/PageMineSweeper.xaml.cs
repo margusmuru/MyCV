@@ -23,8 +23,8 @@ namespace MyCV.Pages
     public partial class PageMineSweeper : Page
     {
         private readonly MainWindow _main;
-
         private readonly PageMineSweeperVm _pageMineSweeperVm;
+
         public PageMineSweeper(MainWindow window)
         {
             InitializeComponent();

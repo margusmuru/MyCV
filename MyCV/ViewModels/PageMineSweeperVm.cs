@@ -32,8 +32,8 @@ namespace MyCV.ViewModels
             set { _minesLeft = value; OnPropertyChanged(propertyName: nameof(MinesLeft));}
         }
 
-
         public MineSweeperService MineService;
+
         public PageMineSweeperVm(PageMineSweeper pageMineSweeper)
         {
             _pageMineSweeper = pageMineSweeper;

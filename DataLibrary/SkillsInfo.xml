@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SkillsInfo>
   <Info>
-    <Name>My key skills include:
+    <Name>
+      My key skills include:
       • Software Development
-      • Java, C#
+      • Java, C#, Javascript, XML
+      • .NET, WPF, Web-Api
       • Game Development in Unity Game Engine
       • 3D modeling, texturing and rendering in Maya and Cinema 4D
     </Name>

@@ -44,6 +44,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BlackJackService.cs" />
     <Compile Include="EducationInfoService.cs" />
     <Compile Include="Enums\GameEndResult.cs" />
     <Compile Include="Enums\MineStat.cs" />

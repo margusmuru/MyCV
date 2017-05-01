@@ -30,6 +30,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Web" />
@@ -41,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Card.cs" />
     <Compile Include="EducationInfoModel.cs" />
+    <Compile Include="Enums\CardType.cs" />
     <Compile Include="MinePlate.cs" />
     <Compile Include="PersonalInfoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
