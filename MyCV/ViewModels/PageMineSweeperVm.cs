@@ -23,6 +23,7 @@ namespace MyCV.ViewModels
         private readonly int _sizeX = 8;
         private readonly int _sizeY = 8;
         private readonly PageMineSweeper _pageMineSweeper;
+        private bool _minesGenerated = false;
 
         private int _minesLeft;
 
@@ -73,12 +74,17 @@ namespace MyCV.ViewModels
                     MineService.AddPlate(btnButton: b, x: i, y: j);
                 }
             }
-            MineService.SetupGameField();
-            MinesLeft = MineService.MinesLeft;
+            
         }
 
         public void GameClickLeft(object sender)
         {
+            if (!_minesGenerated)
+            {
+                MineService.SetupGameField(avoidButton: sender as Button);
+                MinesLeft = MineService.MinesLeft;
+                _minesGenerated = true;
+            }
             bool gameHasEnded = MineService.RevealButton(btn: sender as Button);
             if (gameHasEnded)
             {

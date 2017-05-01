@@ -50,20 +50,20 @@ namespace Services
             
         }
 
-        public void SetupGameField()
+        public void SetupGameField(Button avoidButton)
         {
-            SetupMines(count: 10);
+            SetupMines(count: 10, avoidButton: avoidButton);
             SetNeighbourValues();
         }
 
-        private void SetupMines(int count)
+        private void SetupMines(int count, Button avoidButton)
         {
             _minesLeft = count;
             Random rnd = new Random();
             for (int i = 0; i < count; i++)
             {
                 MinePlate plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
-                while (plate.IsMined)
+                while (plate.IsMined || avoidButton.Equals(obj: plate.BtnButton as Button))
                 {
                     plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
                 }

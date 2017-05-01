@@ -24,7 +24,7 @@ namespace MyCV
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new PageBlackJack(window: this);
+            MainFrame.Content = new PageMineSweeper(window: this);
         }
         
     }
