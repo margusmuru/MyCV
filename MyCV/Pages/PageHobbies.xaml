@@ -48,10 +48,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
 
-        <Image Grid.Row="1" Grid.Column="3" Source="/MyCV;component/Images/PageSkillsInfo/skills_clipart.png" Width="180" Margin="5"/>
     </Grid>
 </Page>

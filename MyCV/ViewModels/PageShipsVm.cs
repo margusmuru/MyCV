@@ -50,8 +50,9 @@ namespace MyCV.ViewModels
             _playerShipsService = new ShipsService();
             GeneratePlayingField(forPlayer: true);
             GeneratePlayingField(forPlayer: false);
-            _enemyShipsService.GenerateShips(count: 10);
-            _playerShipsService.GenerateShips(count: 10);
+            Random rnd = new Random();
+            _enemyShipsService.GenerateShips(count: 10, rnd: rnd);
+            _playerShipsService.GenerateShips(count: 10, rnd: rnd);
             EnemyShipsLeft = _enemyShipsService.ShipsLeft;
             PlayerShipsLeft = _playerShipsService.ShipsLeft;
         }

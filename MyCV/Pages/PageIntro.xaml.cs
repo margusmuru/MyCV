@@ -55,7 +55,7 @@ namespace MyCV.Pages
 
         private void BtnHobbies(object sender, RoutedEventArgs e)
         {
-            //_main.Content = new PageSkills(window: _main);
+            _main.Content = new PageHobbies(window: _main);
         }
 
     }

@@ -36,14 +36,14 @@ namespace Services
             ShipPlates.Add(item: plate);
         }
 
-        public void GenerateShips(int count)
+        public void GenerateShips(int count, Random rnd)
         {
             if (ShipPlates.Count == 0)
             {
                 throw new Exception(message: "There must be plates to add ships");
             }
             ShipsLeft = count;
-            Random rnd = new Random();
+            
             for (int i = 0; i < count; i++)
             {
                 MinePlate plate = null;
@@ -93,7 +93,7 @@ namespace Services
             return RevealButton(btn: plate.BtnButton as Button);
         }
 
-        private void SetButtonVisuals(ShipStat stat, Button btn, MinePlate plate)
+        private void SetButtonVisuals(ShipStat stat, Button btn, ShipPlate plate)
         {
             btn.IsEnabled = false;
             btn.Background = Brushes.DimGray;
@@ -117,7 +117,7 @@ namespace Services
 
         public void RevealAll()
         {
-            foreach (MinePlate plate in ShipPlates)
+            foreach (ShipPlate plate in ShipPlates)
             {
                 Button btn = plate.BtnButton as Button;
                 if (!plate.IsRevealed)
