@@ -68,6 +68,8 @@
                 <Grid>
                     <StackPanel Grid.Row="0" Margin="10" HorizontalAlignment="Center">
                         <!--top items -->
+                        <TextBlock x:Name="WinCount"  Text="Wins one game!" FontSize="20" FontFamily="Showcard Gothic" Margin="10,20,0,0"></TextBlock>
+
                         <Label FontFamily="Showcard Gothic" Margin="10,100,0,0">Mines left:</Label>
                         <TextBlock x:Name="MineCounter"  Text="{Binding MinesLeft}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
                         <TextBlock x:Name="ResultMessage"  Text="" FontSize="40" FontFamily="Showcard Gothic" Margin="10,50,0,0"></TextBlock>

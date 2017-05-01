@@ -39,6 +39,7 @@ namespace MyCV.ViewModels
         {
             _pageMineSweeper = pageMineSweeper;
             MineService = new MineSweeperService();
+            MinesLeft = 10;
             GeneratePlayingField();
         }
 
@@ -94,11 +95,14 @@ namespace MyCV.ViewModels
 
         public void GameClickRight(object sender)
         {
-            bool gameHasEnded = MineService.MarkButton(btn: sender as Button);
-            MinesLeft = MineService.MinesLeft;
-            if (gameHasEnded)
+            if (_minesGenerated)
             {
-                GameHasEnded();
+                bool gameHasEnded = MineService.MarkButton(btn: sender as Button);
+                MinesLeft = MineService.MinesLeft;
+                if (gameHasEnded)
+                {
+                    GameHasEnded();
+                }
             }
         }
 
