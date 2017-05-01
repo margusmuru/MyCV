@@ -43,6 +43,32 @@ namespace Services
 
             return list;
         }
+
+        public string LoadDescriptionData(string field)
+        {
+#if DEBUG
+            Trace.WriteLine(message: "Pull Description for " + field);
+#endif
+            string result = "";
+            XmlDocument doc = LoadXml(filename: @"InfoPageDescriptions.xml");
+            if (doc.DocumentElement != null)
+            {
+                foreach (XmlNode node in doc.DocumentElement.ChildNodes)
+                {
+                    XmlNode dataNode = node.SelectSingleNode(xpath: field);
+                    if (dataNode == null)
+                    {
+                        throw new Exception(message: "Invalid data in personal xml");
+                    }
+                    return dataNode.InnerText;
+                }
+            }
+            else
+            {
+                throw new NullReferenceException(message: "Unable to load xml file");
+            }
+            return result;
+        }
         
     }
 }
