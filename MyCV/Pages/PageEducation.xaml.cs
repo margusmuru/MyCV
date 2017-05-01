@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,30 +17,23 @@ using MyCV.ViewModels;
 namespace MyCV.Pages
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for PageEducation.xaml
     /// </summary>
-    public partial class Page1 : Page
+    public partial class PageEducation : Page
     {
         private readonly MainWindow _main;
-
-        private readonly Page1VM _page1Vm;
-
-        public Page1(MainWindow window)
+        private readonly PageEducationVm _pageEducationVm;
+        public PageEducation(MainWindow window)
         {
             InitializeComponent();
             this._main = window;
-            _page1Vm = new Page1VM();
-            this.DataContext = _page1Vm;
-#if DEBUG
-            Trace.WriteLine(message: "Page1 xaml.cs loaded");
-#endif
-
+            _pageEducationVm = new PageEducationVm(pageEducation: this);
+            this.DataContext = _pageEducationVm;
         }
-        private void BtnMainInfo(object sender, RoutedEventArgs e)
+
+        private void BtnClick_Back(object sender, RoutedEventArgs e)
         {
-            _main.Content = new Page2(window: _main);
+            _main.Content = new PageIntro(window: _main);
         }
-
-        
     }
 }

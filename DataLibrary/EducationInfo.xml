@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<EducationInfo>
+  <Info>
+    <Name>Estonian Information Technology College</Name>
+    <Time>2015 - </Time>
+    <Info>IT systems development. Expected to graduate in 2018. </Info>
+  </Info>
+  <info>
+    <Name>Tallinn University Of Technology </Name>
+    <Time> 2009 - 2012</Time>
+    <Info>Computer systems, Informatics. No degree</Info>
+  </info>
+  <info>
+    <Name>Pärnu Koidula Gymnasium</Name>
+    <Time> 1997 – 2009 </Time>
+    <Info>High School. </Info>
+  </info>
+</EducationInfo>

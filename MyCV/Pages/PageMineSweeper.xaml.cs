@@ -18,27 +18,27 @@ using MyCV.ViewModels;
 namespace MyCV.Pages
 {
     /// <summary>
-    /// Interaction logic for Page2.xaml
+    /// Interaction logic for PageMineSweeper.xaml
     /// </summary>
-    public partial class Page2 : Page
+    public partial class PageMineSweeper : Page
     {
         private readonly MainWindow _main;
 
-        private readonly Page2VM _page2Vm;
-        public Page2(MainWindow window)
+        private readonly PageMineSweeperVm _pageMineSweeperVm;
+        public PageMineSweeper(MainWindow window)
         {
             InitializeComponent();
             this._main = window;
-            _page2Vm = new Page2VM(page: this);
-            this.DataContext = _page2Vm;
+            _pageMineSweeperVm = new PageMineSweeperVm(pageMineSweeper: this);
+            this.DataContext = _pageMineSweeperVm;
 #if DEBUG
-            Trace.WriteLine(message: "Page2 xaml.cs loaded");
+            Trace.WriteLine(message: "PageMineSweeper xaml.cs loaded");
 #endif
         }
 
         private void BtnClick_Back(object sender, RoutedEventArgs e)
         {
-            _main.Content = new Page1(window: _main);
+            _main.Content = new PageIntro(window: _main);
         }
 
         public void BtnClick_Left(object sender, RoutedEventArgs e)
@@ -46,7 +46,7 @@ namespace MyCV.Pages
 #if DEBUG
             Trace.WriteLine(message: "Btn LeftClick");
 #endif
-            _page2Vm.GameClickLeft(sender: sender);
+            _pageMineSweeperVm.GameClickLeft(sender: sender);
         }
 
         public void BtnClick_Right(object sender, RoutedEventArgs e)
@@ -54,7 +54,7 @@ namespace MyCV.Pages
 #if DEBUG
             Trace.WriteLine(message: "Btn RightClick");
 #endif
-            _page2Vm.GameClickRight(sender: sender);
+            _pageMineSweeperVm.GameClickRight(sender: sender);
         }
 
         public void BtnClick_Restart(object sender, RoutedEventArgs e)
@@ -62,7 +62,15 @@ namespace MyCV.Pages
 #if DEBUG
             Trace.WriteLine(message: "Btn Restart MineSweeper");
 #endif
-            _main.Content = new Page2(window: _main);
+            _main.Content = new PageMineSweeper(window: _main);
+        }
+
+        public void BtnClick_Continue(object sender, RoutedEventArgs e)
+        {
+#if DEBUG
+            Trace.WriteLine(message: "Btn Continue from MineSweeper");
+#endif
+            _main.Content = new PageEducation(window: _main);
         }
     }
 }

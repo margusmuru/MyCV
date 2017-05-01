@@ -10,41 +10,37 @@ using Models;
 
 namespace Services
 {
-    public class PersonalInfoService
+    public class PersonalInfoService : Service
     {
-
-        private XmlDocument LoadXml()
-        {
-            XmlDocument doc = new XmlDocument();
-            doc.Load(filename: @"PersonalInfo.xml");
-            if (doc == null)
-            {
-                throw new Exception(message: "Cannot find xml document");
-            }
-            return doc;
-        }
 
         public List<PersonalInfoModel> CreateModels()
         {
 #if DEBUG
-            Trace.WriteLine(message: "CreateModels");
+            Trace.WriteLine(message: "Create Personal Info Models");
 #endif
 
             List<PersonalInfoModel> list = new List<PersonalInfoModel>();
-            XmlDocument doc = LoadXml();
+            XmlDocument doc = LoadXml(filename: @"PersonalInfo.xml");
 
             //parse xml into models
             if (doc.DocumentElement != null)
+            {
                 foreach (XmlNode node in doc.DocumentElement.ChildNodes)
                 {
                     XmlNode nameNode = node.SelectSingleNode(xpath: "Name");
                     XmlNode dataNode = node.SelectSingleNode(xpath: "Data");
                     if (nameNode == null || dataNode == null)
                     {
-                        throw new Exception(message: "Invalid data in xml");
+                        throw new Exception(message: "Invalid data in personal xml");
                     }
                     list.Add(item: new PersonalInfoModel(name: nameNode.InnerText, data: dataNode.InnerText));
                 }
+            }
+            else
+            {
+                throw new NullReferenceException(message: "Unable to load xml file");
+            }
+
             return list;
         }
         

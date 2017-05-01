@@ -29,7 +29,14 @@ namespace Services
         {
             return _gameEndResult;
         }}
-         
+
+        private int _minesLeft;
+        public int MinesLeft
+        {
+            get { return _minesLeft; }
+        }
+
+
         public MineSweeperService()
         {
             _minePlates = new List<MinePlate>();
@@ -51,10 +58,15 @@ namespace Services
 
         private void SetupMines(int count)
         {
+            _minesLeft = count;
             Random rnd = new Random();
             for (int i = 0; i < count; i++)
             {
                 MinePlate plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
+                while (plate.IsMined)
+                {
+                    plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
+                }
                 plate.IsMined = true;
 #if DEBUG
                 Button btn = plate.BtnButton as Button;
@@ -126,7 +138,6 @@ namespace Services
             return CheckGameEndingConditions();
         }
 
-
         private void SetButtonVisuals(MineStatEnum stat, Button btn, MinePlate plate)
         {
             btn.IsEnabled = false;
@@ -194,11 +205,14 @@ namespace Services
             {
                 btn.Background = Brushes.DodgerBlue;
                 plate.IsFlagged = false;
+                _minesLeft++;
             }
             else
             {
                 btn.Background = Brushes.BlueViolet;
                 plate.IsFlagged = true;
+                _minesLeft--;
+
             }
             return CheckGameEndingConditions();
         }
