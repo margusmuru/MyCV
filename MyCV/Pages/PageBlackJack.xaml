@@ -42,7 +42,7 @@
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"></ColumnDefinition>
-            <ColumnDefinition Width="320"></ColumnDefinition>
+            <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
         <StackPanel Orientation="Vertical" Grid.Column="0">
@@ -56,14 +56,17 @@
                 <Grid x:Name="ButtonsLayoutGrid" Margin="5">
                     <!--Cards play area -->
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="150"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="150"/>
-                        <RowDefinition Height="200"/>
+                        <RowDefinition Height="20"/>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="160"/>
+                        <RowDefinition Height="40"/>
                     </Grid.RowDefinitions>
                     <StackPanel Orientation="Horizontal" x:Name="DealerDeck" Grid.Row="1" HorizontalAlignment="Left" Margin="5"></StackPanel>
                     <StackPanel Orientation="Horizontal" x:Name="PlayerDeck" Grid.Row="3" HorizontalAlignment="Left" Margin="5"></StackPanel>
+                    <Button x:Name="DealButton" Grid.Row="4" Content="Deal" Width="80" Height="30" Click="BtnClick_Deal" Margin="100,2,2,2"/>
+                    <Button x:Name="PassButton" Grid.Row="4" Content="Pass" Width="80" Height="30" Click="BtnClick_Pass" Margin="2,2,100,2"/>
+
                 </Grid>
             </Border>
         </StackPanel>
@@ -77,9 +80,14 @@
                 <Grid>
                     <StackPanel Grid.Row="0" Margin="10" HorizontalAlignment="Center">
                         <!--top items -->
-                        <Label FontFamily="Showcard Gothic" Margin="10,100,0,0">Mines left:</Label>
-                        <TextBlock x:Name="MineCounter"  Text="{Binding MinesLeft}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
-                        <TextBlock x:Name="ResultMessage"  Text="" FontSize="40" FontFamily="Showcard Gothic" Margin="10,50,0,0"></TextBlock>
+                        <TextBlock x:Name="WinCount"  Text="Wins: 0/5" FontSize="20" FontFamily="Showcard Gothic" Margin="10,20,0,0"></TextBlock>
+
+                        <Label FontFamily="Showcard Gothic" Margin="10,50,0,0">Dealer cards value:</Label>
+                        <TextBlock x:Name="DealerCounter"  Text="{Binding DealerValue}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
+                        <Label FontFamily="Showcard Gothic" Margin="10,50,0,0">Player cards value:</Label>
+                        <TextBlock x:Name="PlayerCounter"  Text="{Binding PlayerValue}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
+
+                        <TextBlock x:Name="ResultMessage"  Text="" FontSize="30" FontFamily="Showcard Gothic" Margin="10,10,0,0"></TextBlock>
                     </StackPanel>
                 </Grid>
             </Border>

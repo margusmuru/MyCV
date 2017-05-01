@@ -26,7 +26,17 @@ namespace Models
 
         public Card(int cardValue, CardType cardType)
         {
-            CardValue = cardValue;
+            if (cardValue > 10 && cardValue < 14)
+            {
+                CardValue = 10;
+            }else if (cardValue == 14)
+            {
+                CardValue = 11;
+            }
+            else
+            {
+                CardValue = cardValue;
+            }
             string path;
             string folder = "";
             switch (cardType)

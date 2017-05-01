@@ -44,7 +44,17 @@ namespace MyCV.Pages
 
         public void BtnClick_Restart(object sender, RoutedEventArgs e)
         {
-            _main.Content = new PageBlackJack(window: _main);
+            _pageBlackJackVm.PlayAgain();
+        }
+
+        public void BtnClick_Deal(object sender, RoutedEventArgs e)
+        {
+            _pageBlackJackVm.Deal();
+        }
+
+        public void BtnClick_Pass(object sender, RoutedEventArgs e)
+        {
+            _pageBlackJackVm.Pass();
         }
     }
 }

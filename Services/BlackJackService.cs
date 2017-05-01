@@ -10,18 +10,25 @@ namespace Services
 {
     public class BlackJackService
     {
-        private List<Card> Cards { get; }
+        private List<Card> _cards;
+
+        private List<Card> Cards
+        {
+            get { return _cards; }
+        }
+
         private Random _rnd;
 
         public BlackJackService()
         {
-            Cards = new List<Card>();
+            _cards = new List<Card>();
             _rnd = new Random();
             GenerateCardDeck();
         }
 
         private void GenerateCardDeck()
         {
+            _cards = new List<Card>();
             for (int i = 2; i < 15; i++)
             {
                 Cards.Add(item: new Card(cardValue: i, cardType: CardType.Clubs));
@@ -33,8 +40,11 @@ namespace Services
 
         public Card GetNextRandomCard()
         {
-             
-            return Cards[index: _rnd.Next(maxValue: Cards.Count)];
+            Card card = Cards[index: _rnd.Next(maxValue: Cards.Count - 1)];
+            Cards.Remove(item: card);
+            return card;
         }
+
+        
     }
 }
