@@ -41,7 +41,7 @@ namespace MyCV.Pages
             _pageShipsVm.GameLeftClick(btn: sender as Button);
         }
 
-        private void BtnClick_Back(object sender, RoutedEventArgs e)
+        public void BtnClick_Back(object sender, RoutedEventArgs e)
         {
             _main.Content = new PageIntro(window: _main);
         }

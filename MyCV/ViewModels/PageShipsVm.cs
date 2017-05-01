@@ -18,8 +18,8 @@ namespace MyCV.ViewModels
 {
     public class PageShipsVm : INotifyPropertyChanged
     {
-        private readonly int _sizeX = 7;
-        private readonly int _sizeY = 7;
+        private readonly int _sizeX = 4;
+        private readonly int _sizeY = 4;
         private readonly int _btnHeight;
         private readonly int _btnWidth;
         private readonly PageShips _pageShips;

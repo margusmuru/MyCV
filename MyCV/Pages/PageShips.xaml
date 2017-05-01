@@ -86,7 +86,7 @@
 
                         <Label FontFamily="Showcard Gothic" Margin="10,20,0,0">Enemy ships left:</Label>
                         <TextBlock x:Name="EnemyShipsCount"  Text="{Binding EnemyShipsLeft}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
-                        <Label FontFamily="Showcard Gothic" Margin="10,20,0,0">Enemy ships left:</Label>
+                        <Label FontFamily="Showcard Gothic" Margin="10,20,0,0">Player ships left:</Label>
                         <TextBlock x:Name="PlayerShipsCount"  Text="{Binding PlayerShipsLeft}" FontSize="30" FontFamily="Showcard Gothic" Margin="10,5,0,0"></TextBlock>
 
                         <TextBlock x:Name="ResultMessage"  Text="" FontSize="40" FontFamily="Showcard Gothic" Margin="10,50,0,0"></TextBlock>

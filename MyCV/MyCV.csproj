@@ -66,6 +66,9 @@
     <Compile Include="Pages\PageEducation.xaml.cs">
       <DependentUpon>PageEducation.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageHobbies.xaml.cs">
+      <DependentUpon>PageHobbies.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageShips.xaml.cs">
       <DependentUpon>PageShips.xaml</DependentUpon>
     </Compile>
@@ -78,6 +81,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="ViewModels\PageBlackJackVm.cs" />
     <Compile Include="ViewModels\PageEducationVm.cs" />
+    <Compile Include="ViewModels\PageHobbiesVm.cs" />
     <Compile Include="ViewModels\PageIntroVm.cs" />
     <Compile Include="ViewModels\PageMineSweeperVm.cs" />
     <Compile Include="ViewModels\PageShipsVm.cs" />
@@ -96,6 +100,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Pages\PageBlackJack.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageHobbies.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

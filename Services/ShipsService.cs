@@ -83,7 +83,12 @@ namespace Services
             ShipPlate plate = null;
             while (plate == null || plate.IsRevealed)
             {
-                plate = ShipPlates[index: _rnd.Next(maxValue: ShipPlates.Count - 1)];
+                plate = ShipPlates[index: _rnd.Next(maxValue: ShipPlates.Count)];
+                if (plate == null)
+                {
+                    plate = ShipPlates[index: 0];
+                    break;
+                }
             }
             return RevealButton(btn: plate.BtnButton as Button);
         }
