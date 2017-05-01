@@ -14,5 +14,10 @@ namespace Models
         {
             Name = name;
         }
+
+        public SkillsInfoModel()
+        {
+            
+        }
     }
 }

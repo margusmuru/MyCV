@@ -45,7 +45,7 @@
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Width="250">
                     <Grid>
                         <StackPanel Orientation="Vertical">
-                            <Image Source="/MyCV;component/Images/PagePersonalInfo/avatar.png" Width="200" Margin="10" />
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/me.jpg" Width="200" Margin="10" />
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -74,9 +74,9 @@
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5" Height="120">
                     <Grid>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="110" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_002.jpg" Width="110" Margin="5"/>
                             <StackPanel Orientation="Vertical" Width="300" Margin="5">
-                                <TextBlock Height="70" Width="Auto" Text="{Binding EducationDescription}"></TextBlock>
+                                <TextBlock Height="70" Width="Auto" Text="{Binding EducationDescription}" FontWeight="Bold" FontSize="16"></TextBlock>
                                 <Button Content="Education" Width="200" Height="30" Click="BtnEducation" Margin="5"/>
                             </StackPanel>
                         </StackPanel>
@@ -87,10 +87,10 @@
                     <Grid>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical" Width="330" Margin="5">
-                                <TextBlock Height="70" Width="Auto" Text="{Binding WorkExperienceDescription}"></TextBlock>
+                                <TextBlock Height="70" Width="Auto" Text="{Binding WorkExperienceDescription}" FontWeight="Bold" FontSize="16"></TextBlock>
                                 <Button Content="WorkExperience" Width="200" Height="30" Click="BtnWorkExperience" Margin="5"/>
                             </StackPanel>
-                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="110" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/Capture8.JPG" Width="110" Margin="5"/>
                         </StackPanel>
                     </Grid>
                 </Border>
@@ -98,9 +98,9 @@
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5" Height="120">
                     <Grid>
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="110" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/kawasakiVN1700_001.jpg" Width="110" Margin="5"/>
                             <StackPanel Orientation="Vertical" Width="330" Margin="5">
-                                <TextBlock Height="70" Width="Auto" Text="{Binding SkillsDescription}"></TextBlock>
+                                <TextBlock Height="70" Width="Auto" Text="{Binding SkillsDescription}" FontWeight="Bold" FontSize="16"></TextBlock>
                                 <Button Content="Skills" Width="200" Height="30" Click="BtnSkills" Margin="75,5,5,5"/>
                             </StackPanel>
                         </StackPanel>
@@ -111,10 +111,10 @@
                     <Grid>
                         <StackPanel Orientation="Horizontal">
                             <StackPanel Orientation="Vertical" Width="330" Margin="5">
-                                <TextBlock Height="70" Width="Auto" Text="{Binding HobbiesDescription}"></TextBlock>
+                                <TextBlock Height="70" Width="Auto" Text="{Binding HobbiesDescription}" FontWeight="Bold" FontSize="16"></TextBlock>
                                 <Button Content="Hobbies" Width="200" Height="30" Click="BtnHobbies" Margin="5"/>
                             </StackPanel>
-                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="110" Margin="5"/>
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/GameWorld018.jpg" Width="110" Margin="5"/>
                         </StackPanel>
                     </Grid>
                 </Border>

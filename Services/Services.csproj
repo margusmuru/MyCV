@@ -49,6 +49,7 @@
     <Compile Include="Enums\GameEndResult.cs" />
     <Compile Include="Enums\MineStat.cs" />
     <Compile Include="Enums\ShipStat.cs" />
+    <Compile Include="HobbiesInfoService.cs" />
     <Compile Include="MineSweeperService.cs" />
     <Compile Include="PersonalInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

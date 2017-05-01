@@ -13,9 +13,9 @@ namespace MyCV.ViewModels
 {
     public class PageWorkExperienceVm
     {
-        private ObservableCollection<WorkExperienceModel> _workExperienceInfoModels;
+        private ObservableCollection<WorkExperienceInfoModel> _workExperienceInfoModels;
 
-        public ObservableCollection<WorkExperienceModel> WorkExperienceInfoModels      
+        public ObservableCollection<WorkExperienceInfoModel> WorkExperienceInfoModels      
         {
             get { return _workExperienceInfoModels; }
             set { _workExperienceInfoModels = value; }
@@ -27,7 +27,7 @@ namespace MyCV.ViewModels
             Trace.WriteLine(message: "PageWorkExperienceVm loaded");
 #endif
             _workExperienceInfoModels
-                = new ObservableCollection<WorkExperienceModel>();
+                = new ObservableCollection<WorkExperienceInfoModel>();
             LoadWorkExperienceInfo();
         }
 
@@ -37,7 +37,7 @@ namespace MyCV.ViewModels
             Trace.WriteLine(message: "LoadWorkExperienceInfo");
 #endif
             WorkExperienceService service = new WorkExperienceService();
-            List<WorkExperienceModel> list = service.CreateModels();
+            List<WorkExperienceInfoModel> list = service.CreateModels();
             if (list == null)
             {
                 throw new NullReferenceException(message: "Unable to load xml data from service");

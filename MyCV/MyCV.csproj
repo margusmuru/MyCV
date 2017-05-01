@@ -165,10 +165,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\PagePersonalInfo\avatar.png" />
+    <Resource Include="Images\PagePersonalInfo\avatar.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\PagePersonalInfo\AgeraR_007.jpg" />
+    <Resource Include="Images\PagePersonalInfo\AgeraR_007.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\PageWorkExperience\work_clipart.png" />
@@ -194,6 +198,21 @@
     <Resource Include="Images\PageSkillsInfo\skills_clipart.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\PagePersonalInfo\me.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PagePersonalInfo\kawasakiVN1700_001.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PagePersonalInfo\GameWorld018.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PagePersonalInfo\Capture8.JPG">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Images\PagePersonalInfo\AgeraR_002.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="avatar.ico" />
     <Content Include="Images\Cards\Clubs\10.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

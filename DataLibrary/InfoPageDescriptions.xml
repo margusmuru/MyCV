@@ -1,9 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <InfoPageDescriptions>
   <Info>
-    <Education>Education</Education>
-    <Skills>Skills</Skills>
-    <WorkExperience>Work Experience</WorkExperience>
-    <Hobbies>Hobbies</Hobbies>
+    <Education>What is my education? 
+Win a game of MineSweeper
+and find out!</Education>
+    <Skills>What are my main skills?
+Win 5 hands of Blackjack to find out!</Skills>
+    <WorkExperience>Work experience? Win a game of 
+BattleShips to learn more about me!</WorkExperience>
+    <Hobbies>Hobbies? You get to see those without
+any tasks. There are some useful links 
+to my work aswell</Hobbies>
   </Info>
 </InfoPageDescriptions>

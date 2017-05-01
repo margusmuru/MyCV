@@ -11,12 +11,12 @@ namespace Services
 {
     public class WorkExperienceService : Service
     {
-        public List<WorkExperienceModel> CreateModels()
+        public List<WorkExperienceInfoModel> CreateModels()
         {
 #if DEBUG
             Trace.WriteLine(message: "Create work experience Info Models");
 #endif
-            List<WorkExperienceModel> list = new List<WorkExperienceModel>();
+            List<WorkExperienceInfoModel> list = new List<WorkExperienceInfoModel>();
             XmlDocument doc = LoadXml(filename: @"WorkExperienceInfo.xml");
 
             //parse xml into models
@@ -38,7 +38,7 @@ namespace Services
                     {
                         throw new Exception(message: "Invalid data in work experience xml");
                     }
-                    list.Add(item: new WorkExperienceModel(
+                    list.Add(item: new WorkExperienceInfoModel(
                         name: nameNode.InnerText,
                         time: timeNode.InnerText,
                         info: infoNode.InnerText,

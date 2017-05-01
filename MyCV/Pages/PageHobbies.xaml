@@ -42,15 +42,28 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="30"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="30"/>
         </Grid.ColumnDefinitions>
         <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
-
+        <Label Grid.Row="1" Grid.Column="1" Margin="5" Content="{Binding LongTextDes}" FontFamily="Showcard Gothic"/>
+        <TextBlock Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5" TextWrapping="Wrap" Text="{Binding LongText}" Background="Gainsboro"></TextBlock>
+        <Label Grid.Row="3" Grid.Column="1" Margin="5" Content="{Binding Link1Des}" FontFamily="Showcard Gothic"/>
+        <TextBox Grid.Row="4" Grid.Column="1" Margin="5" Text="{Binding Link1}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+        <Label Grid.Row="5" Grid.Column="1" Margin="5" Content="{Binding Link2Des}" FontFamily="Showcard Gothic"/>
+        <TextBox Grid.Row="6" Grid.Column="1" Margin="5" Text="{Binding Link2}" IsReadOnly="True" VerticalAlignment="Center"></TextBox>
+        <Label Grid.Row="8" Grid.Column="1" Content="PS: This app was built in 2 days without using any previous code! Also, I prefer back-end coding :)"></Label>
     </Grid>
 </Page>

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HobbiesAndLinks>
+  <Info>
+    <Name>Hobbies And Achievements</Name>
+    <Data>I love learning new programming languages in order to further my knowledge of the field.
+I´m also interested in game development, game programming and 3D graphics.
+Since I´m appealed to games, I play some competitive e-sports in my free time.
+I’ve done some off-road cycling and archery in the past.
+    </Data>
+  </Info>
+  <Info>
+    <Name>GitHub</Name>
+    <Data>https://github.com/margusmuru</Data>
+  </Info>
+  <Info>
+    <Name>Small part of my 3D models at Turbosquid</Name>
+    <Data>https://www.turbosquid.com/Search/Index.cfm?keyword=creative3dstudio</Data>
+  </Info>
+</HobbiesAndLinks>

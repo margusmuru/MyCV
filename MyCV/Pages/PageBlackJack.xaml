@@ -49,7 +49,7 @@
             <!--Leftside panel-->
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                 <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2"/>
-                <Button Content="Dont have time to play" Width="160" Height="20" Click="BtnClick_Continue" Margin="2,2,2,2"/>
+                <Button Content="Don't have time to play" Width="160" Height="20" Click="BtnClick_Continue" Margin="2,2,2,2"/>
             </StackPanel>
             <TextBlock Text="BlackJack" FontSize="25" FontFamily="Showcard Gothic" HorizontalAlignment="Center"></TextBlock>
             <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5">

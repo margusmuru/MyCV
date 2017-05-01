@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Models
 {
-    public class WorkExperienceModel : EducationInfoModel
+    public class WorkExperienceInfoModel : EducationInfoModel
     {
         private string _position;
         public string Position
@@ -17,7 +17,7 @@ namespace Models
             }
         }
 
-        public WorkExperienceModel(string name, string time, string info, string position) 
+        public WorkExperienceInfoModel(string name, string time, string info, string position) 
             :base(name: name, time: time, info: info)
         {
             _position = position;
