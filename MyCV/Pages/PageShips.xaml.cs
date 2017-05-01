@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyCV.ViewModels;
 
 namespace MyCV.Pages
 {
@@ -21,11 +23,22 @@ namespace MyCV.Pages
     public partial class PageShips : Page
     {
         private readonly MainWindow _main;
-
+        private readonly PageShipsVm _pageShipsVm;
         public PageShips(MainWindow window)
         {
             InitializeComponent();
             this._main = window;
+            _pageShipsVm = new PageShipsVm(pageShips: this);
+            this.DataContext = _pageShipsVm;
+
+        }
+
+        public void BtnClick_Left(object sender, RoutedEventArgs e)
+        {
+#if DEBUG
+            Trace.WriteLine(message: "Btn LeftClick");
+#endif
+            _pageShipsVm.GameLeftClick(btn: sender as Button);
         }
 
         private void BtnClick_Back(object sender, RoutedEventArgs e)

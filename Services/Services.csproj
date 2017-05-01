@@ -48,10 +48,12 @@
     <Compile Include="EducationInfoService.cs" />
     <Compile Include="Enums\GameEndResult.cs" />
     <Compile Include="Enums\MineStat.cs" />
+    <Compile Include="Enums\ShipStat.cs" />
     <Compile Include="MineSweeperService.cs" />
     <Compile Include="PersonalInfoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service.cs" />
+    <Compile Include="ShipsService.cs" />
     <Compile Include="SkillsInfoService.cs" />
     <Compile Include="WorkExperienceService.cs" />
   </ItemGroup>

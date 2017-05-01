@@ -14,39 +14,25 @@ namespace Services
 {
     public class MineSweeperService
     {
-        private readonly List<MinePlate> _minePlates;
+        public List<MinePlate> MinePlates { get; }
 
-        public List<MinePlate> MinePlates => _minePlates;
+        public bool GameHasEnded { get; private set; }
 
-        private bool _gameHasEnded;
-        public bool GameHasEnded
-        {
-            get { return _gameHasEnded; }
-        }
+        public GameEndResult GameEndResult { get; private set; }
 
-        private GameEndResult _gameEndResult;
-        public GameEndResult GameEndResult {get
-        {
-            return _gameEndResult;
-        }}
-
-        private int _minesLeft;
-        public int MinesLeft
-        {
-            get { return _minesLeft; }
-        }
+        public int MinesLeft { get; private set; }
 
 
         public MineSweeperService()
         {
-            _minePlates = new List<MinePlate>();
-            _gameHasEnded = false;
+            MinePlates = new List<MinePlate>();
+            GameHasEnded = false;
         }
 
         public void AddPlate(Button btnButton, int x, int y)
         {
             MinePlate plate = new MinePlate(column: y, row: x, button: btnButton);
-            _minePlates.Add(item: plate);
+            MinePlates.Add(item: plate);
             
         }
 
@@ -58,14 +44,14 @@ namespace Services
 
         private void SetupMines(int count, Button avoidButton)
         {
-            _minesLeft = count;
+            MinesLeft = count;
             Random rnd = new Random();
             for (int i = 0; i < count; i++)
             {
-                MinePlate plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
+                MinePlate plate = MinePlates[index: rnd.Next(maxValue: MinePlates.Count)];
                 while (plate.IsMined || avoidButton.Equals(obj: plate.BtnButton as Button))
                 {
-                    plate = _minePlates[index: rnd.Next(maxValue: _minePlates.Count)];
+                    plate = MinePlates[index: rnd.Next(maxValue: MinePlates.Count)];
                 }
                 plate.IsMined = true;
 #if DEBUG
@@ -81,7 +67,7 @@ namespace Services
 
         private void SetNeighbourValues()
         {
-            foreach (MinePlate plate in _minePlates)
+            foreach (MinePlate plate in MinePlates)
             {
                 if (plate.IsMined)
                 { 
@@ -107,11 +93,11 @@ namespace Services
         public bool RevealButton(Button btn)
         {
             //find plate
-            MinePlate plate = _minePlates.
+            MinePlate plate = MinePlates.
                 FirstOrDefault(predicate: x => Equals(objA: x.BtnButton as Button, objB: btn));
             if (plate == null)
             {
-                throw new NullReferenceException();
+                throw new NullReferenceException(message: "Plate not found");
             }
             if (plate != null && !plate.IsRevealed && !plate.IsFlagged)
             {
@@ -161,7 +147,7 @@ namespace Services
 
         private List<MinePlate> GetNeighboursList(MinePlate plate)
         {
-            return _minePlates.Where(predicate: x =>
+            return MinePlates.Where(predicate: x =>
                         (x.RowPos <= plate.RowPos + 1 && x.RowPos >= plate.RowPos - 1) &&
                         (x.ColumnPos <= plate.ColumnPos + 1 && x.ColumnPos >= plate.ColumnPos - 1) &&
                          x != plate)
@@ -170,7 +156,7 @@ namespace Services
 
         private void RevealAll()
         {
-            foreach (MinePlate plate in _minePlates)
+            foreach (MinePlate plate in MinePlates)
             {
                 Button btn = plate.BtnButton as Button;
                 if (!plate.IsRevealed)
@@ -189,13 +175,13 @@ namespace Services
                     }
                 }
             }
-            _gameHasEnded = true;
+            GameHasEnded = true;
         }
 
         public bool MarkButton(Button btn)
         {
             //find plate
-            MinePlate plate = _minePlates.
+            MinePlate plate = MinePlates.
                 FirstOrDefault(predicate: x => Equals(objA: x.BtnButton as Button, objB: btn));
             if (plate == null)
             {
@@ -205,13 +191,13 @@ namespace Services
             {
                 btn.Background = Brushes.DodgerBlue;
                 plate.IsFlagged = false;
-                _minesLeft++;
+                MinesLeft++;
             }
             else if(MinesLeft > 0)
             {
                 btn.Background = Brushes.BlueViolet;
                 plate.IsFlagged = true;
-                _minesLeft--;
+                MinesLeft--;
 
             }
             return CheckGameEndingConditions();
@@ -221,12 +207,12 @@ namespace Services
         {
             if (GameHasEnded)
             {
-                _gameEndResult = GameEndResult.Loss;
+                GameEndResult = GameEndResult.Loss;
                 return true;
             }
             //check if all correct bombs are marked
             bool allMarked = true;
-            foreach (MinePlate plate in _minePlates)
+            foreach (MinePlate plate in MinePlates)
             {
                 if (plate.IsMined && !plate.IsFlagged)
                 {
@@ -237,7 +223,7 @@ namespace Services
             if (allMarked)
             {
                 RevealAll();
-                _gameEndResult = GameEndResult.Win;
+                GameEndResult = GameEndResult.Win;
             }
             return allMarked;
         }

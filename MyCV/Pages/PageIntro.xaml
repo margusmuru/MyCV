@@ -69,7 +69,7 @@
                     </ListView.View>
                 </ListView>
             </StackPanel>
-            <StackPanel Margin="40,0,10,10" HorizontalAlignment="Left" Width="460">
+            <StackPanel Margin="40,0,10,10" HorizontalAlignment="Left" Width="460" VerticalAlignment="Center">
                 <!-- First element-->
                 <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5" Height="120">
                     <Grid>

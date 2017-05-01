@@ -15,11 +15,7 @@ namespace Models
     {
         public int CardValue { get;}
 
-        private readonly BitmapImage _bitmapImage;
-
-        public BitmapImage BitmapImage
-        {
-            get { return _bitmapImage; }
+        public BitmapImage BitmapImage { get;
             //set { _bitmapImage = value; }
         }
 
@@ -47,7 +43,7 @@ namespace Models
                     case CardType.Diamonds:
                         folder = "Diamonds";
                         break;
-                        case CardType.Hearts:
+                    case CardType.Hearts:
                         folder = "Hearts";
                         break;
                     case CardType.Spades:
@@ -70,7 +66,7 @@ namespace Models
                 throw new Exception(message: "Unable to find card image files");
             }
 
-            _bitmapImage =new BitmapImage(new Uri(path));
+            BitmapImage =new BitmapImage(uriSource: new Uri(uriString: path));
             
         }
 
