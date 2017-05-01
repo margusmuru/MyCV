@@ -26,7 +26,7 @@ namespace Services
             GenerateCardDeck();
         }
 
-        private void GenerateCardDeck()
+        public void GenerateCardDeck()
         {
             _cards = new List<Card>();
             for (int i = 2; i < 15; i++)

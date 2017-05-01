@@ -18,7 +18,7 @@ namespace MyCV.ViewModels
     {
         private readonly PageBlackJack _pageBlackJack;
 
-        public BlackJackService BlackJackService;
+        private BlackJackService _blackJackService;
 
         private int _dealerValue;
         private bool _dealerContinues;
@@ -47,14 +47,14 @@ namespace MyCV.ViewModels
         public PageBlackJackVm(PageBlackJack pageBlackJack)
         {
             _pageBlackJack = pageBlackJack;
-            BlackJackService = new BlackJackService();
+            _blackJackService = new BlackJackService();
 
             StartNewRound();
         }
 
         public void AddDealerCard()
         {
-            Card card = BlackJackService.GetNextRandomCard();
+            Card card = _blackJackService.GetNextRandomCard();
             Image image = CreateCardForGui(card: card);
             DealerValue = _dealerValue + card.CardValue;
             _pageBlackJack.DealerDeck.Children.Add(element: image);
@@ -62,7 +62,7 @@ namespace MyCV.ViewModels
 
         public void AddPlayerCard()
         {
-            Card card = BlackJackService.GetNextRandomCard();
+            Card card = _blackJackService.GetNextRandomCard();
             Image image = CreateCardForGui(card: card);
             PlayerValue = _playerValue + card.CardValue;
             _pageBlackJack.PlayerDeck.Children.Add(element: image);
@@ -83,10 +83,8 @@ namespace MyCV.ViewModels
             AddPlayerCard();
             if (_playerValue >= 21)
             {
-                _playerContinues = false;
                 _dealerContinues = false;
-                _pageBlackJack.DealButton.IsEnabled = false;
-                _pageBlackJack.PassButton.IsEnabled = false;
+                CallPlayerStop();
             }
             else
             {
@@ -96,7 +94,7 @@ namespace MyCV.ViewModels
                     if (_dealerValue >= 21)
                     {
                         _dealerContinues = false;
-                        _playerContinues = false;
+                        CallPlayerStop();
                     }
                 }
                 else
@@ -109,9 +107,7 @@ namespace MyCV.ViewModels
 
         public void Pass()
         {
-            _playerContinues = false;
-            _pageBlackJack.DealButton.IsEnabled = false;
-            _pageBlackJack.PassButton.IsEnabled = false;
+            CallPlayerStop();
             while (_dealerValue < 17)
             {
                 AddDealerCard();
@@ -122,6 +118,13 @@ namespace MyCV.ViewModels
             }
             _dealerContinues = false;
             DecideWinner();
+        }
+
+        private void CallPlayerStop()
+        {
+            _playerContinues = false;
+            _pageBlackJack.DealButton.Visibility = Visibility.Hidden;
+            _pageBlackJack.PassButton.Visibility = Visibility.Hidden;
         }
 
         private void DecideWinner()
@@ -175,10 +178,10 @@ namespace MyCV.ViewModels
             _dealerValue = 0;
             _dealerContinues = true;
             _playerContinues = true;
-            _pageBlackJack.DealButton.IsEnabled = true;
-            _pageBlackJack.PassButton.IsEnabled = true;
+            _pageBlackJack.DealButton.Visibility = Visibility.Visible;
+            _pageBlackJack.PassButton.Visibility = Visibility.Visible;
             _pageBlackJack.ResultMessage.Text = "";
-
+            _blackJackService.GenerateCardDeck();
             AddDealerCard();
             AddPlayerCard();
         }
