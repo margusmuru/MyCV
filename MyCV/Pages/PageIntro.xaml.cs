@@ -48,6 +48,10 @@ namespace MyCV.Pages
             _main.Content = new PageWorkExperience(window: _main);
         }
 
+        private void BtnSkills(object sender, RoutedEventArgs e)
+        {
+            _main.Content = new PageSkills(window: _main);
+        }
 
     }
 }

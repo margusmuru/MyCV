@@ -33,7 +33,7 @@ namespace MyCV.ViewModels
         private void LoadSkillsInfo()
         {
 #if DEBUG
-            Trace.WriteLine(message: "LoadEducationInfo");
+            Trace.WriteLine(message: "LoadSkillsInfo");
 #endif
             SkillsInfoService service = new SkillsInfoService();
             List<SkillsInfoModel> list = service.CreateModels();

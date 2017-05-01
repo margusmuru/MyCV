@@ -8,5 +8,11 @@ namespace Models
 {
     public class SkillsInfoModel
     {
+        public string Name { get;}
+
+        public SkillsInfoModel(string name)
+        {
+            Name = name;
+        }
     }
 }

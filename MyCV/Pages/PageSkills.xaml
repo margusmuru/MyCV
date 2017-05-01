@@ -52,18 +52,18 @@
             </Grid.ColumnDefinitions>
             <Button Content="Back" Width="40" Height="20" Click="BtnClick_Back" Margin="2,2,2,2" Grid.ColumnSpan="2" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left"/>
 
-            <ListBox x:Name="EducationListBox" Margin="0,2,0,0" ItemsSource="{Binding SkilsInfoModels}" Grid.Column="1" Grid.Row="1">
+            <ListBox x:Name="EducationListBox" Margin="0,2,0,0" ItemsSource="{Binding SkillsInfoModels}" Grid.Column="1" Grid.Row="1">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5">
                             <Grid>
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="400"/>
                                 </Grid.ColumnDefinitions>
                                 <Grid.RowDefinitions>
                                     <RowDefinition Height="*"/>
                                 </Grid.RowDefinitions>
-                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Text="{Binding Name}" MinHeight="30" VerticalAlignment="Center" Margin="2"/>
+                            <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" Text="{Binding Name}" MinHeight="30" VerticalAlignment="Center" Margin="2" TextWrapping="Wrap" />
 
                         </Grid>
                         </Border>

@@ -1,7 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <SkillsInfo>
-  <Info></Info>
-  <Info></Info>
-  <Info></Info>
-  <Info></Info>
+  <Info>
+    <Name>My key skills include:
+      • Software Development
+      • Java, C#
+      • Game Development in Unity Game Engine
+      • 3D modeling, texturing and rendering in Maya and Cinema 4D
+    </Name>
+  </Info>
+  <Info>
+    <Name>During studies in Estonian Information Technology College I built several desktop applicatons in Java and WPF, by myself and in team. Currently I study javascript, .NET and Android app development. </Name>
+  </Info>
+  <Info>
+    <Name>In 2013 I started learning Unity game engine, used Unityscript (similar to javascript) and later C#. I have published 2 smaller games to Google Play Store, a larger strategy game project is still in development stage, but playable with limited features.  </Name>
+  </Info>
+  <Info>
+    <Name>I have over 10 years of experience in 3D modeling and texturing. I sell my models in an online marketplace and I have done freelance work. </Name>
+  </Info>
+  <Info>
+    <Name>Language: Estonian – native language </Name>
+  </Info>
+  <Info>
+    <Name>Language: English – C1 reading, listening; B2 speaking  </Name>
+  </Info>
 </SkillsInfo>

@@ -95,6 +95,17 @@
                     </Grid>
                 </Border>
                 <!-- Third element-->
+                <Border BorderBrush="#2084AA" BorderThickness="1" CornerRadius="8" Margin="5">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="/MyCV;component/Images/PagePersonalInfo/AgeraR_007.jpg" Width="140" Margin="5"/>
+                            <StackPanel Orientation="Vertical" Width="300">
+                                <TextBlock Height="100" Width="Auto" Text="Here goes description"></TextBlock>
+                                <Button Content="Skills" Width="200" Height="40" Click="BtnSkills" Margin="75,5,5,5"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                </Border>
             </StackPanel>
         </StackPanel>
     </Grid>

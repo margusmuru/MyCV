@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MyCV.ViewModels;
 
 namespace MyCV.Pages
 {
@@ -21,9 +23,16 @@ namespace MyCV.Pages
     public partial class PageSkills : Page
     {
         private readonly MainWindow _main;
-        public PageSkills()
+        private readonly PageSkillsVm _pageSkillsVm;
+        public PageSkills(MainWindow window)
         {
             InitializeComponent();
+            this._main = window;
+            _pageSkillsVm = new PageSkillsVm(pageSkills: this);
+            this.DataContext = _pageSkillsVm;
+#if DEBUG
+            Trace.WriteLine(message: "PageSkills xaml.cs loaded");
+#endif
         }
 
         private void BtnClick_Back(object sender, RoutedEventArgs e)

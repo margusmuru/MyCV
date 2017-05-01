@@ -17,26 +17,22 @@ namespace Services
             Trace.WriteLine(message: "Create Skills Info Models");
 #endif
             List<SkillsInfoModel> list = new List<SkillsInfoModel>();
-            XmlDocument doc = LoadXml(filename: @"skillsInfo.xml");
+            XmlDocument doc = LoadXml(filename: @"SkillsInfo.xml");
 
             //parse xml into models
             if (doc.DocumentElement != null)
             {
                 foreach (XmlNode node in doc.DocumentElement.ChildNodes)
                 {
-                    XmlNode nameNode = node.SelectSingleNode(xpath: "Name");
-                    XmlNode timeNode = node.SelectSingleNode(xpath: "Time");
-                    XmlNode infoNode = node.SelectSingleNode(xpath: "Info");
+                    XmlNode infoNode = node.SelectSingleNode(xpath: "Name");
 #if DEBUG
-                    Trace.WriteLine(message: nameNode.InnerText);
-                    Trace.WriteLine(message: timeNode.InnerText);
                     Trace.WriteLine(message: infoNode.InnerText);
 #endif
-                    if (nameNode == null || timeNode == null || infoNode == null)
+                    if (infoNode == null)
                     {
                         throw new Exception(message: "Invalid data in skills xml");
                     }
-                    list.Add(item: new SkillsInfoModel());
+                    list.Add(item: new SkillsInfoModel(name: infoNode.InnerText));
                 }
             }
             else
